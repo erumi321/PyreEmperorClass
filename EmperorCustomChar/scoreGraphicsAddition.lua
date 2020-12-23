@@ -1,5 +1,6 @@
 OnAnyLoad{function(triggerArgs)
 	VaporizeGraphics["PlayerEmperor"] = { ScoreGraphic = "PlayerMediumScorePose", OpacityDelay = 2.4, TeleportOffsetX = 0, TeleportOffsetY = 0}
+	BallScale["PlayerEmperor"] = 0.80
 end}
 ModUtil.BaseOverride("PlayerTaunt", function ( tauntingPlayer, skipInputRule )
 TauntParameters =
@@ -563,4 +564,31 @@ ModUtil.BaseOverride("GetScoreValueBonus", function(scoringCharacter, throwing, 
 		end
 	end
 	return scoreBonus
+end,EmperorCustomChar)
+
+ModUtil.BaseOverride("UpdateBallScale", function()
+BallScale =
+{
+	["PlayerSmall"] = 0.45,
+	["PlayerMedium"] = 0.80,
+	["PlayerMediumAlt"] = 0.80,
+	["PlayerLarge"] = 1.10,
+	["PlayerTrail"] = 0.425,
+	["PlayerFlying"] = 0.70,
+	["PlayerMonster"] = 1.0,
+	["PlayerTree"] = 1.0,
+	["PlayerImp"] = 0.375,
+	["PlayerEmperor"] = 0.80,
+}
+	local characterData = CharacterCache[BallCarrierId]
+	if characterData == nil then
+		return
+	end
+
+	local ballScaleMath = BallScale[characterData.Archetype]
+	ballScale = ballScaleMath
+	SetScale({ Id = ballId, Fraction = ballScale, Duration = 0.3 })
+	if ImpifiedUnits[BallCarrierId] then
+		SetScale({ Id = ballId, Fraction = 0.4, Duration = 0.3 })
+	end
 end,EmperorCustomChar)
