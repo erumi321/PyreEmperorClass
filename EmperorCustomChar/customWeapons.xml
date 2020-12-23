@@ -1,0 +1,21 @@
+<Weapons>
+		<Weapon
+		Name="CastEmperor"
+		InheritFrom="CastMonster"
+		Projectile="CastEmperor"
+		NumProjectiles="6"
+		ProjectileAngleOffset="10"
+		ChargeGraphic="PlayerMediumCastCharging"
+		FireGraphic="PlayerMediumCastFiring"
+		IdleGraphic="PlayerMediumCastReturnToIdle"
+		ChargeCancelGraphic="PlayerMediumCastChargingReverseStart"
+		>
+	</Weapon>
+		<Projectile
+		Name="CastEmperor"
+		InheritFrom="CastMonster"
+		Speed="275.0"
+		>
+
+	</Projectile>
+</Weapons>
