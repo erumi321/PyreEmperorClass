@@ -43,7 +43,7 @@
 			ReviveFxScale="1.2"
 			>
 		</Life>	
-		<Weapon Name="JumpMedium"/>
+		<Weapon Name="JumpEmperor"/>
 		<Weapon Name="SprintMedium"/>
 		<Weapon Name="CastEmperor"/>
 	</Npc>

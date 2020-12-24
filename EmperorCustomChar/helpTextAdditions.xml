@@ -1,6 +1,6 @@
 <HelpText>
 <Text Id="Emperor_Cast" DisplayName="Blast" Description="Fires {$Char.PronounPos} Aura in a wedge-shaped pattern." AdditionalDescription=""/>
-<Text Id="Emperor_Jump" DisplayName="Jump" Description="High-jumps to evade adversaries' Auras." AdditionalDescription=""/>
+<Text Id="Emperor_Jump" DisplayName="Stomp" Description="A large blast that knocks allies and enemies away" AdditionalDescription=""/>
 <Text Id="Emperor_Rush" DisplayName="Sprint" Description="Runs much faster for a short time." AdditionalDescription=""/>
 <Text Id="Emperor_Pyre" DisplayName="" Description="Reduces {$Char.PronounPos} adversaries' flame by {$Char.ScoreValue}{!Icons.ScoreValue} each time." AdditionalDescription=""/>
 

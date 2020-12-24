@@ -18,4 +18,8 @@
 		>
 
 	</Projectile>
+	<Weapon Name="JumpEmperor"  InheritFrom="JumpLargeTouchdown" Projectile="JumpEmperor" SlotType="THIRD"  ControlName="Jump">
+	</Weapon>
+		<Projectile Name="JumpEmperor"  InheritFrom="JumpLargeTouchdown" ImpactVelocity="2000">
+		</Projectile>
 </Weapons>

@@ -567,7 +567,7 @@ ModUtil.BaseOverride("GetScoreValueBonus", function(scoringCharacter, throwing, 
 end,EmperorCustomChar)
 
 ModUtil.BaseOverride("UpdateBallScale", function()
-BallScale =
+local BallScale =
 {
 	["PlayerSmall"] = 0.45,
 	["PlayerMedium"] = 0.80,
@@ -586,6 +586,27 @@ BallScale =
 	end
 
 	local ballScaleMath = BallScale[characterData.Archetype]
+	ballScale = ballScaleMath
+	SetScale({ Id = ballId, Fraction = ballScale, Duration = 0.3 })
+	if ImpifiedUnits[BallCarrierId] then
+		SetScale({ Id = ballId, Fraction = 0.4, Duration = 0.3 })
+	end
+end,EmperorCustomChar)
+ModUtil.BaseOverride("UpdateBallScaleCharacter", function(character)
+local BallScale =
+{
+	["PlayerSmall"] = 0.45,
+	["PlayerMedium"] = 0.80,
+	["PlayerMediumAlt"] = 0.80,
+	["PlayerLarge"] = 1.10,
+	["PlayerTrail"] = 0.425,
+	["PlayerFlying"] = 0.70,
+	["PlayerMonster"] = 1.0,
+	["PlayerTree"] = 1.0,
+	["PlayerImp"] = 0.375,
+	["PlayerEmperor"] = 0.80,
+}
+	local ballScaleMath = BallScale[character.Archetype]
 	ballScale = ballScaleMath
 	SetScale({ Id = ballId, Fraction = ballScale, Duration = 0.3 })
 	if ImpifiedUnits[BallCarrierId] then
